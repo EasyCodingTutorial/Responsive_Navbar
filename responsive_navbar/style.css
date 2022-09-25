@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+* {
+  font-family: "Besley", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: 0.2s all linear;
+}
+*::selection {
+  background: var(--main);
+  color: #fff;
+}
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url(bg.jpg);
+  height: 100vh !important;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navbar/Header Start */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 9%;
+}
+.header .logo img {
+  height: 6rem;
+}
+.header .navbar a {
+  color: #fff;
+  font-size: 1.7rem;
+  margin-left: 2rem;
+}
+.header .navbar a:hover {
+  color: #dc3445;
+}
+#menuBars {
+  color: #fff;
+  cursor: pointer;
+  font-size: 3rem;
+  display: none;
+}
+/* Navbar/Header End */
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menuBars {
+    display: initial;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 0.2rem solid #222;
+    background: #000;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .header .navbar a {
+    display: flex;
+    background: #333;
+    font-size: 2rem;
+    margin: 1.3rem;
+    padding: 1.3rem;
+    border-radius: 0.5rem;
+  }
+  .fa-times {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
